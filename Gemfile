@@ -34,6 +34,7 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form", branch: 'main'
 gem "sassc-rails"
+gem "haml-rails", "~> 2.0"
 
 group :development, :test do
   gem "dotenv-rails"
@@ -60,3 +61,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "tailwindcss-rails", "~> 2.3"
