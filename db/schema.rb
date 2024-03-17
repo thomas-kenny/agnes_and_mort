@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2024_03_16_114331) do
 
   create_table "rsvps", force: :cascade do |t|
     t.string "name"
+    t.boolean "attending"
     t.string "dietary_requirements"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

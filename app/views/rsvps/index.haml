@@ -1,0 +1,27 @@
+= render "site/navbar"
+
+%main
+  .relative.z-10.mt-32
+    .mx-auto.max-w-4xl.text-center.pb-16
+      %h2.mt-2.text-4xl.font-bold.tracking-tight.text-gray-900.sm:text-6xl RSVPs
+  
+    .px-4.sm:px-6.lg:px-8.max-w-7xl.mx-auto
+      .mt-8.flow-root
+        .-mx-4.-my-2.overflow-x-auto.sm:-mx-6.lg:-mx-8
+          .inline-block.min-w-full.py-2.align-middle.sm:px-6.lg:px-8
+            %table.min-w-full.divide-y.divide-gray-300
+              %thead
+                %tr
+                  %th.pl-4.pr-3.text-left.text-sm.font-semibold.text-gray-900.sm:pl-0{:class => "py-3.5", :scope => "col"} Name
+                  %th.px-3.text-left.text-sm.font-semibold.text-gray-900{:class => "py-3.5", :scope => "col"} Attending?
+                  %th.px-3.text-left.text-sm.font-semibold.text-gray-900{:class => "py-3.5", :scope => "col"} Dietary Requirements
+              %tbody.divide-y.divide-gray-200
+                - @rsvps.each do |rsvp|
+                  %tr
+                    %td.whitespace-nowrap.py-4.pl-4.pr-3.text-sm.font-medium.text-gray-900.sm:pl-0
+                      = rsvp.name.titleize
+                    %td.whitespace-nowrap.px-3.py-4.text-sm.text-gray-500
+                      = rsvp.attending? ? 'Yes' : 'No'
+                    %td.whitespace-nowrap.px-3.py-4.text-sm.text-gray-500
+                      = rsvp.dietary_requirements
+

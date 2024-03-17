@@ -1,0 +1,29 @@
+.relative.z-10.mt-32.pb-20.sm:mt-56.sm:pb-24.xl:pb-0
+  .mx-auto.max-w-2xl.text-center.pb-16
+    %h2.mt-2.text-4xl.font-bold.tracking-tight.text-gray-900.sm:text-6xl RSVP
+    %p.mt-6.text-lg.leading-8.text-gray-600 Please let us know if you can make it to our wedding by the end of May!
+  .mx-auto.flex.max-w-7xl.flex-col.items-center.gap-x-8.gap-y-10.px-6.sm:gap-y-8.lg:px-8.xl:flex-row.xl:items-stretch.bg-blue-50.rounded-lg
+    .-mt-8.w-full.max-w-2xl.xl:-mb-8.xl:w-96.xl:flex-none
+      .relative.h-full.md:-mx-8.xl:mx-0.xl:aspect-auto
+        = image_tag('franks_portrait.jpg', class: "absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover shadow-2xl")
+    .w-full.max-w-2xl.xl:max-w-none.xl:flex-auto.xl:px-16.xl:py-24
+      .sm:mx-auto.sm:w-full{:class => "sm:max-w-[480px]"}
+        .bg-white.px-6.py-12.shadow.sm:rounded-lg.sm:px-12
+          = simple_form_for @rsvp do |f|
+            %label.block.font-medium.leading-6.text-gray-900{:for => "name"} Name(s)
+            .mt-2.mb-4
+              = f.input :name, label: false, required: true, input_html: {class: "block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
+            .mt-2.mb-4.flex.gap-x-8
+              .flex.items-center.gap-x-2
+                = f.radio_button :attending, true
+                = label :attending, 'Attending', for: 'attending_yes'
+              .flex.items-center.gap-x-2
+                = f.radio_button :attending, false
+                = label :attending, 'Not Attending', for: 'attending_no'
+            
+            %label.block.font-medium.leading-6.text-gray-900{:for => "email"} Any dietary requirements?
+            .mt-2.mb-4 
+              = f.input :dietary_requirements, label: false, input_html: {class: "block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
+            .mt-4.flex.justify-center
+              = f.submit "Submit", class: 'w-full bg-blue-400 border border-transparent rounded-md shadow-sm py-2 px-4 text-lg font-medium text-white hover:opacity-75 sm:ml-6 sm:order-last sm:w-auto hover:cursor-pointer'
+        
