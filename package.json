@@ -11,5 +11,9 @@
   "version": "0.1.0",
   "engines": {
     "node": "14.21.3"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build": "webpack"
   }
 }
