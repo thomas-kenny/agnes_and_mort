@@ -20,6 +20,7 @@ class RsvpsController < ApplicationController
       :name,
       :attending,
       :dietary_requirements,
+      :email
     )
   end
 end
