@@ -4,6 +4,7 @@ class CreateRsvps < ActiveRecord::Migration[6.0]
       t.string :name
       t.boolean :attending
       t.string :dietary_requirements
+      t.string :email
       t.timestamps
     end
   end

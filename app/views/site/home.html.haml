@@ -1,16 +1,16 @@
 %body
   .bg-white
     = render "navbar"
-    %main
+    %main#home
       .relative.isolate
         .overflow-hidden
           .mx-auto.max-w-none.lg:max-w-7xl.px-6.pb-32.pt-36.sm:pt-60.lg:px-8.lg:pt-40
             .mx-auto.max-w-2xl.gap-x-14.lg:mx-0.lg:flex.lg:max-w-none.lg:items-center
               .relative.w-full.max-w-xl.lg:shrink-0.xl:max-w-2xl
-                %h1.text-4xl.font-bold.tracking-tight.text-gray-900.sm:text-6xl Agnes and Mort are getting married!!!
-                %p.mt-6.text-2xl.leading-8.text-gray-600.sm:max-w-md.lg:max-w-none They lub each other so much and can't wait to celebrate with you all.
+                %h1.text-4xl.font-bold.tracking-tight.text-gray-900.sm:text-6xl Agnes and Mairt are getting married!
+                %p.mt-6.text-2xl.leading-8.text-gray-600.sm:max-w-md.lg:max-w-none Let them know if you can join them to celebrate now!
                 .mt-10.flex.items-center.gap-x-6
-                  %a.text-lg.font-semibold.leading-6.text-gray-900{:href => "#"}
+                  %a.text-lg.font-semibold.leading-6.text-gray-900.rsvp-button
                     RSVP now!
                     %span{"aria-hidden" => "true"} →
               .mt-14.flex.justify-end.gap-8.sm:-mt-44.sm:justify-start.sm:pl-20.lg:mt-0.lg:pl-0
@@ -32,6 +32,42 @@
                   .relative
                     = image_tag('selfie_portrait.jpg', class: "aspect-[2/3] bg-gray-900/5 w-full rounded-xl object-cover shadow-lg")
                     .pointer-events-none.absolute.inset-0.rounded-xl.ring-1.ring-inset{:class => "ring-gray-900/10"}
-            = render "rsvp_form"
+            #rsvp-form
+              = render "rsvp_form"
+            
             = render "information"
-            = render 'q_and_a'
+            #q-and-as
+              = render 'q_and_a'
+
+
+:javascript
+  
+  var rsvpButton = document.querySelector('.rsvp-button')
+  var rsvpNav = document.querySelector('.rsvp-nav')
+  var homeNav = document.querySelector('.home-nav')
+  var infoNav = document.querySelector('.info-nav')
+  var QAndAsNav = document.querySelector('.q-and-as-nav')
+  
+  rsvpButton.addEventListener('click', scrollToForm)
+  rsvpNav.addEventListener('click', scrollToForm)
+  homeNav.addEventListener('click', scrollToHome)
+  infoNav.addEventListener('click', scrollToInfo)
+  QAndAsNav.addEventListener('click', scrollToQAndAs)
+
+
+
+  function scrollToForm() {
+    document.getElementById("rsvp-form").scrollIntoView()
+  }
+
+  function scrollToHome() {
+    document.getElementById("home").scrollIntoView()
+  }
+
+  function scrollToInfo() {
+    document.getElementById("info").scrollIntoView()
+  }
+
+  function scrollToQAndAs() {
+    document.getElementById("q-and-as").scrollIntoView()
+  }

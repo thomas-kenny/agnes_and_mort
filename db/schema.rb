@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2024_03_16_114331) do
     t.string "name"
     t.boolean "attending"
     t.string "dietary_requirements"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
