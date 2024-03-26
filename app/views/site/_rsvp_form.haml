@@ -20,7 +20,7 @@
               .flex.items-center.gap-x-2
                 = f.radio_button :attending, false
                 = label :attending, 'Not Attending', for: 'attending_no'
-            %label.block.font-medium.leading-6.text-gray-900{:for => "email"} Any dietary requirements?
+            %label.block.font-medium.leading-6.text-gray-900{:for => "dietary_requirements"} Any dietary requirements?
             .mt-2.mb-4 
               = f.input :dietary_requirements, label: false, input_html: {class: "block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
             %label.block.font-medium.leading-6.text-gray-900{:for => "email"} Email address
