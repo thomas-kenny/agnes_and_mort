@@ -5,7 +5,7 @@
   .mx-auto.flex.max-w-7xl.flex-col.items-center.gap-x-8.gap-y-10.px-6.sm:gap-y-8.lg:px-8.xl:flex-row.xl:items-stretch.lg:bg-white.rounded-lg
     .-mt-8.w-full.max-w-2xl.xl:-mb-8.xl:w-96.xl:flex-none
       .relative.h-full.md:-mx-8.xl:mx-0.xl:aspect-auto
-        = image_tag('photobooth_landscape_low_res.jpg', class: "absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover shadow-2xl")
+        = image_tag('rsvp_image.jpg', class: "absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover shadow-2xl")
     .w-full.max-w-2xl.xl:max-w-none.xl:flex-auto.xl:px-8.xl:py-8
       .sm:mx-auto.sm:w-full{:class => "sm:max-w-[480px]"}
         .bg-white.px-6.py-12.shadow.sm:rounded-lg.sm:px-12
@@ -28,5 +28,5 @@
               = f.input :email, label: false, required: true, input_html: {class: "block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
             
             .mt-4.flex.justify-center
-              = f.submit "Submit", class: 'w-full bg-blue-400 border border-transparent rounded-md shadow-sm py-2 px-4 text-lg font-medium text-white hover:opacity-75 sm:ml-6 sm:order-last sm:w-auto hover:cursor-pointer'
+              = f.submit "Submit", class: 'w-full bg-pink-400 border border-transparent rounded-md shadow-sm py-2 px-4 text-lg font-medium text-white hover:opacity-75 sm:ml-6 sm:order-last sm:w-auto hover:cursor-pointer'
         
