@@ -1,9 +1,24 @@
 %header.absolute.inset-x-0.top-0.z-50
-  %nav.mx-auto.flex.items-center.justify-between.lg:justify-end.p-6.lg:px-8{"aria-label" => "Global"}
-    .flex.lg:flex-1
+  %nav.mx-auto.flex.items-center.justify-between.p-6.lg:px-8{"aria-label" => "Global"}
+    .flex
       %a{:class => "-m-1.5 p-1.5", :href => root_path}
         = image_tag('dachshund_icon.png', class: "w-12")
+    .text-2xl.text-center.font-medium.bg-pink-200.rounded-lg.px-6.py-2
+      - if params[:submitted] == 'true'
+        %p.mb-0
+          Thank you for your RSVP - 
+          %span
+            - if params[:attending] == 'true'
+              we can't wait to celebrate with you!
+            - else
+              we're sorry you can't make it!
+      - elsif params[:submitted] == 'false'
+        %p.mb-0
+          Oops something went wrong - please try submitting the form again!
+
+          
+
     .flex.lg:gap-x-12.gap-x-8
-      %a.text-xl.lg:.text-lg.font-semibold.leading-6.text-gray-900.rsvp-nav RSVP
-      %a.text-xl.lg:.text-lg.font-semibold.leading-6.text-gray-900.info-nav Info
-      %a.text-xl.lg:.text-lg.font-semibold.leading-6.text-gray-900.q-and-as-nav Q & As
+      .text-xl.lg:.text-lg.font-semibold.leading-6.text-gray-900.rsvp-nav.hover:underline.hover:cursor-pointer RSVP
+      .text-xl.lg:.text-lg.font-semibold.leading-6.text-gray-900.info-nav.hover:underline.hover:cursor-pointer Info
+      .text-xl.lg:.text-lg.font-semibold.leading-6.text-gray-900.q-and-as-nav.hover:underline.hover:cursor-pointer Q & As

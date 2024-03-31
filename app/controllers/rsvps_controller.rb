@@ -3,9 +3,9 @@ class RsvpsController < ApplicationController
   def create
     @rsvp = Rsvp.new(rsvp_params)
     if @rsvp.save!
-      redirect_to root_path, notice: "Thanks for submitting your response!"
+      redirect_to root_path(submitted: 'true', attending: @rsvp.attending?)
     else
-      redirect_to root_path, alert: "Unable to save response, please try again!"
+      redirect_to root_path(submitted: 'false')
     end
   end
 
