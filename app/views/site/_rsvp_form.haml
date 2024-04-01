@@ -10,25 +10,25 @@
       .sm:mx-auto.sm:w-full{:class => "sm:max-w-[480px]"}
         .bg-white.px-6.py-12.shadow.sm:rounded-lg.sm:px-12
           = simple_form_for @rsvp do |f|
-            %label.block.font-medium.leading-6.text-gray-900{:for => "name"} Name(s)
+            %label.block.font-medium.leading-6.text-gray-900.text-lg{:for => "name"} Name(s)
             .mt-2.mb-4
-              = f.input :name, label: false, required: true, input_html: {class: "block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
-            .mt-2.mb-4.flex.gap-x-8
+              = f.input :name, label: false, required: true, input_html: {class: "block w-full rounded-md text-lg inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
+            .mt-2.mb-4.flex.gap-x-8.text-lg
               .flex.items-center.gap-x-2
                 = f.radio_button :attending, true
                 = label :attending, 'Attending', for: 'attending_yes'
               .flex.items-center.gap-x-2
                 = f.radio_button :attending, false
                 = label :attending, 'Not Attending', for: 'attending_no'
-            %label.block.font-medium.leading-6.text-gray-900{:for => "dietary_requirements"} Any dietary requirements?
+            %label.block.font-medium.leading-6.text-gray-900.text-lg{:for => "dietary_requirements"} Any dietary requirements?
             .mt-2.mb-4 
-              = f.input :dietary_requirements, label: false, input_html: {class: "block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
-            %label.block.font-medium.leading-6.text-gray-900{:for => "email"} Email address
+              = f.input :dietary_requirements, label: false, input_html: {class: "text-lg block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
+            %label.block.font-medium.leading-6.text-gray-900.text-lg{:for => "email"} Email address
             .mt-2.mb-4
-              = f.input :email, label: false, required: true, input_html: {class: "block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
+              = f.input :email, label: false, required: true, input_html: {class: "text-lg block w-full rounded-md inset focus:ring-indigo-600 sm:text-sm sm:leading-6"}
             
             .mt-4.flex.justify-center
-              = f.submit "Submit", class: 'w-full bg-pink-400 border border-transparent rounded-md shadow-sm py-2 px-4 text-lg font-medium text-white hover:opacity-75 sm:ml-6 sm:order-last sm:w-auto hover:cursor-pointer'
+              = f.submit "Submit", class: 'text-xl w-full bg-pink-400 border border-transparent rounded-md shadow-sm py-2 px-4 text-lg font-medium text-white hover:opacity-75 sm:ml-6 sm:order-last sm:w-auto hover:cursor-pointer'
         
   .flex.justify-center.pt-40
     = image_tag('photobooth_landscape_low_res.jpg', class: 'w-2/3 rounded-2xl')
